@@ -1,0 +1,8 @@
+[package]
+name = "exact-currency"
+version = "0.1.0"
+authors = ["dan <danieleades@hotmail.com>"]
+edition = "2018"
+
+[dependencies]
+decimal = "2.0.4"
