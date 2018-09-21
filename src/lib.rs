@@ -1,7 +1,10 @@
 extern crate decimal;
-
 pub use decimal::d128;
 pub type Status = decimal::Status;
+
+#[macro_use]
+extern crate serde_derive;
+
 use std::ops;
 
 pub trait ExactCurrency:
@@ -24,6 +27,8 @@ where
 macro_rules! define_currency {
     ($currency: ident, $abbreviation: expr,
      $symbol: expr) => {
+
+        #[derive(Serialize, Deserialize, Debug)]
         pub struct $currency {
             amount: d128,
         }
